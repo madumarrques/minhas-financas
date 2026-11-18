@@ -1,4 +1,4 @@
-export type TransactionType = 'in' | 'out';
+﻿export type TransactionType = 'in' | 'out';
 
 export type PaymentMethod = 'Pix' | 'Crédito' | 'Débito' | 'Dinheiro' | 'Outro';
 
@@ -10,6 +10,9 @@ export type CategoryName =
   | 'Assinaturas'
   | 'Delivery'
   | 'Saúde'
+  | 'Cuidado pessoal'
+  | 'Estudos'
+  | 'Roupas'
   | 'Outros';
 
 export interface Transaction {

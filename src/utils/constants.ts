@@ -1,4 +1,4 @@
-import { CategoryName, PaymentMethod } from '../types/finance';
+﻿import { CategoryName, PaymentMethod } from '../types/finance';
 
 export const MONTH_NAMES = [
   'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
@@ -13,6 +13,9 @@ export const CATEGORIES: Record<CategoryName, string> = {
   Assinaturas: '#c3b5e6',
   Delivery: '#f0c8a0',
   Saúde: '#a5d3c8',
+  'Cuidado pessoal': '#e8b8d0',
+  Estudos: '#a8c4e8',
+  Roupas: '#d4b5d8',
   Outros: '#d3cabb',
 };
 

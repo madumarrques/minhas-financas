@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { Bill, EncryptedVault, FinanceState, Transaction } from '../types/finance';
+﻿import { useState, useEffect, useCallback, useRef } from 'react';
+import { Bill, CategoryName, EncryptedVault, FinanceState, Transaction } from '../types/finance';
 import { deleteStoredVault, getStoredVault, saveStoredVault } from '../services/storage';
 import { decryptVault, deriveKey, encryptState, generateSalt } from '../services/crypto';
 import { generateId, getTodayISO, getYearMonth } from '../utils/formatters';
@@ -150,6 +150,24 @@ export function useFinanceVault(showToast: (msg: string) => void) {
     showToast(`${installments} parcelas lançadas`);
   };
 
+  const updateTransactionCategory = async (
+    id: string,
+    newCategory: CategoryName,
+    updateAllGroup = false
+  ) => {
+    const target = state.tx.find((t) => t.id === id);
+    if (!target || target.type === 'in') return;
+
+    const nextTx = state.tx.map((t) => {
+      const matches =
+        updateAllGroup && target.gid ? t.gid === target.gid : t.id === id;
+      return matches ? { ...t, cat: newCategory } : t;
+    });
+
+    await persistState({ ...state, tx: nextTx });
+    showToast('Categoria atualizada');
+  };
+
   const deleteTransaction = async (id: string, deleteAllGroup = false) => {
     const target = state.tx.find((t) => t.id === id);
     if (!target) return;
@@ -258,6 +276,7 @@ export function useFinanceVault(showToast: (msg: string) => void) {
     createVaultWithPin,
     lockNow,
     addTransaction,
+    updateTransactionCategory,
     deleteTransaction,
     addBill,
     deleteBill,

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+﻿import { useState, useCallback } from 'react';
 import { ActiveTab, Transaction } from './types/finance';
 import { getYearMonth, shiftYearMonth } from './utils/formatters';
 import { useFinanceVault } from './hooks/useFinanceVault';
@@ -31,6 +31,7 @@ export function App() {
     createVaultWithPin,
     lockNow,
     addTransaction,
+    updateTransactionCategory,
     deleteTransaction,
     addBill,
     deleteBill,
@@ -122,6 +123,7 @@ export function App() {
       <TransactionDetailSheet
         transaction={selectedTx}
         onClose={() => setSelectedTx(null)}
+        onUpdateCategory={updateTransactionCategory}
         onDelete={deleteTransaction}
       />
 
