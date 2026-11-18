@@ -62,7 +62,7 @@ export const LockScreen: React.FC<LockScreenProps> = ({
   };
 
   const title = hasVault
-    ? 'Bem-vindo(a) de volta'
+    ? 'Bem-vinda de volta'
     : confirmPin
     ? 'Confirme o PIN'
     : 'Crie um PIN';
