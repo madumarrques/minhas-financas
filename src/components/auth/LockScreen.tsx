@@ -68,7 +68,7 @@ export const LockScreen: React.FC<LockScreenProps> = ({
     : 'Crie um PIN';
 
   const subtitle = hasVault
-    ? 'Seus dados ficam criptografados neste aparelho.'
+    ? 'Seus dados ficam salvos neste aparelho.'
     : confirmPin
     ? 'Digite o mesmo PIN novamente.'
     : 'Digite 6 dígitos. Ele protege e criptografa tudo neste aparelho. Não há como recuperar um PIN esquecido.';
