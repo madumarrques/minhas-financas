@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Minhas Finanças</title>
+  <desc id="desc">Ícone minimalista de finanças com símbolo R$ e gráfico circular em tons pastel.</desc>
+  <rect width="512" height="512" rx="112" fill="#F5F1E9"/>
+  <g fill="none" stroke-width="32" stroke-linecap="round">
+    <path d="M256 92 A164 164 0 0 1 411 306" stroke="#A6C29B"/>
+    <path d="M384 374 A164 164 0 0 1 256 420" stroke="#EFA99A"/>
+    <path d="M210 412 A164 164 0 0 1 112 310" stroke="#9FC1E2"/>
+    <path d="M100 256 A164 164 0 0 1 139 144" stroke="#EBD99B"/>
+    <path d="M163 116 A164 164 0 0 1 256 92" stroke="#C6B2E6"/>
+  </g>
+  <text x="256" y="286" text-anchor="middle"
+        fill="#292722" font-family="Georgia, 'Times New Roman', serif"
+        font-size="112" font-style="italic" letter-spacing="-7">R$</text>
+</svg>
